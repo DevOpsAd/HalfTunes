@@ -1,6 +1,5 @@
 language: swift
 osx_image: xcode9.2
-xcode_project: HalfTunes.xcodeproj
 
 script:
 xcodebuild -project HalfTunes.xcodeproj -scheme HalfTunes -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' clean build test | xcpretty
