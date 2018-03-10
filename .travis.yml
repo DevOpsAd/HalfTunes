@@ -1,5 +1,13 @@
 language: swift
 osx_image: xcode9.2
 
+addons:
+  sonarcloud:
+    organization: "devopsad-github"
+    token:
+      secure: "bc50e78e704123c29fc2511dd88548ffc681cc07"
+
 script:
-xcodebuild -project HalfTunes.xcodeproj -scheme HalfTunes -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' clean build test | xcpretty
+  - xcodebuild -project HalfTunes.xcodeproj -scheme HalfTunes -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' clean build test | xcpretty && exit ${PIPESTATUS[0]}
+  - sonar-scanner
+
