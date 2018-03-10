@@ -25,7 +25,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  var window:- UIWindow?
+  var window: UIWindow?
   let tintColor =  UIColor(red: 242/255, green: 71/255, blue: 63/255, alpha: 1)
   var backgroundSessionCompletionHandler: (() -> Void)?
 
